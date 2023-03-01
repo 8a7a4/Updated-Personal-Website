@@ -1,3 +1,4 @@
+<!-- information for first uploaded piece -->
 title: Idiosyncrasy
 imagefile: idiosyncrasy.jpg
 
