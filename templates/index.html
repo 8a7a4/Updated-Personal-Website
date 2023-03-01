@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Posts</h2>
+    <div class="grid-container"> 
+    {% for article in articles %}
+    <div class="w3-container w3-margin-bottom">
+        <a href="{{ url_for('page', path=article.path) }}">
+    <div>
+           <img src="{{ url_for('static', filename='images/' + article.imagefile) }}" alt="Artwork" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>{{ article.title }}</b></p>
+        </div>
+    </div>
+        </a>
+      </div>
+        <!-- <li> -->
+            <!-- <a href="{{ url_for('page', path=article.path) }}">{{ article.title }} -->
+        <!-- </li> -->
+    {% else %}
+        <li>No articles so far</li>
+    {% endfor %}
+    </div>
+{% endblock content %}

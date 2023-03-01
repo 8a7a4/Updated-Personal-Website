@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sarah Gorfinkel">
+    <meta name="description" content="Sarah Gorfinkel's Blog">
+    <title>Sarah Gorfinkel</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'my_styling.css') }}" />
+</head>
+
+<body>
+    <header class="w3-display-container w3-content w3-center" style="max-width:1500px">
+        <img class="w3-image" src="{{ url_for('static', filename='images/header_image.jpg') }}" alt="Me" width="1500" height="600">
+        <!-- <div class="w3-display-middle w3-padding-large w3-border w3-wide w3-text-light-grey w3-center"> -->
+          <!-- <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">Sarah Gorfinkel</h1>
+          <h5 class="w3-hide-large" style="white-space:nowrap">Sarah Gorfinkel</h5>
+          <h3 class="w3-hide-medium w3-hide-small">Visual Artist</h3> -->
+        </div>
+      
+        
+        <!-- Navbar (placed at the bottom of the header image) -->
+        <div class="w3-bar w3-light-grey w3-round w3-display-bottommiddle w3-hide-small" style="bottom:-16px">
+          <a href="{{ url_for('index') }}" class="w3-bar-item w3-button">Home</a>
+          <a href="#portfolio" class="w3-bar-item w3-button">Portfolio</a>
+          <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+        </div>
+      </header>
+    <h1><a href="{{ url_for('index') }}">Sarah Gorfinkel</a></h1>
+
+    <div>
+        {% block content %}
+        <p>Default Content</p> 
+        {% endblock content %}
+    </div>
+</body>
+</html>
